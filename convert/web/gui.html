@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" src="/eel.js"></script>
+
+<body>
+<input type="text" id="filepath">
+
+<button id="select_file" onclick="getPathToFile()">select file</button>
+<br>
+<button id="process" onclick="convertFile()">Process</button>
+</body>
+
+<script>
+    function getPathToFile() {
+        eel.getPath()(r => document.getElementById("filepath").value = r);
+    };
+    function convertFile(){
+        eel.convert(document.getElementById("filepath").value);
+    }
+</script>
+</html>
